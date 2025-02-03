@@ -9,5 +9,14 @@ public class Main {
     }
 
     // ここから
+    float applyTaxAndShippingFee(int noTaxSubtotal){
+        float total = 0;
+        if (noTaxSubtotal >= 10000) {
+            total = 1.1f*noTaxSubtotal;
+        }else if (noTaxSubtotal < 10000) {
+            total = 1.1f*(noTaxSubtotal+800);
+        }
+        return total;
+    }
     // ここまで
 }

@@ -15,6 +15,39 @@ public class Main {
 
     public static void test(int[] itemPrices) {
         // ここから
+        double priceA = 0;
+        double priceB = 0;
+        double priceC = 0;
+
+        for(int i = 0;i < itemPrices.length;++i){
+        priceA += itemPrices[i];
+        priceB += itemPrices[i]*0.9;  
+        }
+
+        if (priceB <= 5000) {
+            priceB += 800;
+        }
+
+        for(int i = 0;i < itemPrices.length;++i){
+            if (itemPrices[i] >= 2000) {
+            priceC += itemPrices[i]*0.8;
+            }else{
+            priceC += itemPrices[i];
+            }
+            }
+            
+        if (priceC <= 5000) {
+            priceC += 800;
+        }
+
+        double minPrice = Math.min(priceA, Math.min(priceB,priceC));
+        if (minPrice == priceA) {
+        System.out.println("A");
+        }else if (minPrice == priceB) {
+        System.out.println("B");    
+        }else if (minPrice == priceC) {
+        System.out.println("C");      
+        }
         // ここまで
     }
 }
